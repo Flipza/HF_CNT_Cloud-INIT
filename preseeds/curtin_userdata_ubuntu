@@ -36,5 +36,5 @@ late_commands:
   55_vwg: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.zone.description}} >/opt/HF_CNT_Cloud-INIT/wireguard"]
   60_tag: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.tag_names()}} >/opt/HF_CNT_Cloud-INIT/tags"]
 {{if 'wireguard' in (node.tag_names())}}
-  70_wig: ["curtin", "in-target", "--", "sh", "-c", "cd /opt/HF_CNT_Cloud-INIT && wget https://raw.githubusercontent.com/mc-b/lernmaas/master/services/wireguard.sh && bash -x ./wireguard.sh" ]
+  70_wig: ["curtin", "in-target", "--", "sh", "-c", "cd /opt/HF_CNT_Cloud-INIT && wget https://github.com/Flipza/HF_CNT_Cloud-INIT/blob/main/wireguard.sh && bash -x ./wireguard.sh" ]
 {{endif}}
