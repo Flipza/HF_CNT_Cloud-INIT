@@ -12,25 +12,25 @@ late_commands:
   20_git: ["curtin", "in-target", "--", "sh", "-c", "git clone {{node.description}} /opt/HF_CNT_Cloud-INIT"]
   25_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/HF_CNT_Cloud-INIT/cloud.cfg.d/node-1.cfg /etc/cloud/cloud.cfg.d/"]
 {{else}}
-  30_git: ["curtin", "in-target", "--", "sh", "-c", "git clone https://github.com/mc-b/lernmaas /opt/lernmaas"]
-  35_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/lernmaas/cloud.cfg.d/* /etc/cloud/cloud.cfg.d/"]
-  40_rep: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.description}} >/opt/lernmaas/repositories"]
+  30_git: ["curtin", "in-target", "--", "sh", "-c", "git clone https://github.com/Flipza/HF_CNT_Cloud-INIT /opt/HF_CNT_Cloud-INIT"]
+  35_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/HF_CNT_Cloud-INIT/cloud.cfg.d/standard.cfg /etc/cloud/cloud.cfg.d/"]
+  40_rep: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.description}} >/opt/HF_CNT_Cloud-INIT/repositories"]
 {{endif}}
 {{if 'cloud-init-node-2' in (node.tag_names())}}
   20_git: ["curtin", "in-target", "--", "sh", "-c", "git clone {{node.description}} /opt/HF_CNT_Cloud-INIT"]
   25_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/HF_CNT_Cloud-INIT/cloud.cfg.d/node-2.cfg /etc/cloud/cloud.cfg.d/"]
 {{else}}
-  30_git: ["curtin", "in-target", "--", "sh", "-c", "git clone https://github.com/mc-b/lernmaas /opt/lernmaas"]
-  35_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/lernmaas/cloud.cfg.d/* /etc/cloud/cloud.cfg.d/"]
-  40_rep: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.description}} >/opt/lernmaas/repositories"]
+  30_git: ["curtin", "in-target", "--", "sh", "-c", "git clone https://github.com/Flipza/HF_CNT_Cloud-INIT /opt/HF_CNT_Cloud-INIT"]
+  35_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/HF_CNT_Cloud-INIT/cloud.cfg.d/standard.cfg /etc/cloud/cloud.cfg.d/"]
+  40_rep: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.description}} >/opt/HF_CNT_Cloud-INIT/repositories"]
 {{endif}}
 {{if 'cloud-init-node-3' in (node.tag_names())}}
   20_git: ["curtin", "in-target", "--", "sh", "-c", "git clone {{node.description}} /opt/HF_CNT_Cloud-INIT"]
   25_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/HF_CNT_Cloud-INIT/cloud.cfg.d/node-3.cfg /etc/cloud/cloud.cfg.d/"]
 {{else}}
-  30_git: ["curtin", "in-target", "--", "sh", "-c", "git clone https://github.com/mc-b/lernmaas /opt/lernmaas"]
-  35_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/lernmaas/cloud.cfg.d/* /etc/cloud/cloud.cfg.d/"]
-  40_rep: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.description}} >/opt/lernmaas/repositories"]
+  30_git: ["curtin", "in-target", "--", "sh", "-c", "git clone https://github.com/Flipza/HF_CNT_Cloud-INIT /opt/HF_CNT_Cloud-INIT"]
+  35_run: ["curtin", "in-target", "--", "sh", "-c", "cp /opt/HF_CNT_Cloud-INIT/cloud.cfg.d/standard.cfg /etc/cloud/cloud.cfg.d/"]
+  40_rep: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.description}} >/opt/HF_CNT_Cloud-INIT/repositories"]
 {{endif}}
   50_rep: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.pool.description}} >>/opt/HF_CNT_Cloud-INIT/repositories"]
   55_vwg: ["curtin", "in-target", "--", "sh", "-c", "/bin/echo {{node.zone.description}} >/opt/HF_CNT_Cloud-INIT/wireguard"]
