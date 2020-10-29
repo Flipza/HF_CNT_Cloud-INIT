@@ -28,3 +28,5 @@ late_commands:
 {{if 'wireguard' in (node.tag_names())}}
   70_wig: ["curtin", "in-target", "--", "sh", "-c", "cd /opt/lernmaas && wget https://raw.githubusercontent.com/mc-b/lernmaas/master/services/wireguard.sh && bash -x ./wireguard.sh" ]
 {{endif}}
+{{endif}}
+{{endif}}
